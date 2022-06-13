@@ -1,11 +1,13 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="robbyrussell"
-plugins=(git dotbare fzf-tab)
-
 alias i="sudo pacman -Syu --needed --noconfirm"
 alias cd="z"
 alias cat="bat"
+alias dot="dotbare"
+export PATH=$PATH:~/bin
+
+ZSH_THEME="robbyrussell"
+plugins=(git dotbare fzf-tab)
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
