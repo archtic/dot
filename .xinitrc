@@ -1,4 +1,8 @@
 #!/bin/sh
 
 export TERMINAL="alacritty"
-exec herbstluftwm --locked
+export EDITOR="nvim"
+
+xrandr -s 1680x1050
+feh --bg-scale ~/.wallpaper/white.jpg
+i3
