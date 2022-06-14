@@ -6,7 +6,7 @@ alias mv="mv -i"
 alias cd="z"
 alias cat="bat"
 alias dot="dotbare"
-alias rmvimswap="~/.local/share/nvim/swap/"
+alias rmvimswap="rm -rfi ~/.local/share/nvim/swap/"
 
 export PATH=$PATH:~/bin
 
