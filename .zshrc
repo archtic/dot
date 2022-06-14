@@ -21,6 +21,8 @@ plugins=(
 	fzf 
 	fzf-tab
 	sudo
+	zsh-autosuggestions
+	zsh-syntax-highlighting
 )
 
 ENABLE_CORRECTION="true"
