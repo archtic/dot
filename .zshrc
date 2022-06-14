@@ -9,6 +9,7 @@ alias dot="dotbare"
 alias nnn="nnn -deH"
 alias vim="nvim"
 alias rmvimswap="rm -rfi ~/.local/share/nvim/swap/"
+alias killwm="killall i3"
 
 export PATH=$PATH:~/bin
 export NNN_FIFO="/tmp/nnn.fifo"
