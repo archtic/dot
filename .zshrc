@@ -1,15 +1,21 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 alias i="sudo pacman -Syu --needed --noconfirm"
+alias rm="rm -i"
+alias mv="mv -i"
 alias cd="z"
 alias cat="bat"
 alias dot="dotbare"
+alias rmvimswap="~/.local/share/nvim/swap/"
+
 export PATH=$PATH:~/bin
 
 ZSH_THEME="robbyrussell"
-plugins=(git dotbare fzf-tab)
+plugins=(git dotbare fzf fzf-tab)
 
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_BASE="/usr/bin/fzf"
+export FZF_DEFAULT_COMMAND='ag -g "" --hidden'
+export FZF_CTRL_T_COMMAND='ag -g "" --hidden'
 
 eval "$(zoxide init zsh)"
 
