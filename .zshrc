@@ -6,13 +6,24 @@ alias mv="mv -i"
 alias cd="z"
 alias cat="bat"
 alias dot="dotbare"
+alias nnn="nnn -deH"
 alias vim="nvim"
 alias rmvimswap="rm -rfi ~/.local/share/nvim/swap/"
 
 export PATH=$PATH:~/bin
+export NNN_FIFO="/tmp/nnn.fifo"
+export NNN_PLUG="p:-preview-tui"
 
 ZSH_THEME="robbyrussell"
-plugins=(git dotbare fzf fzf-tab)
+plugins=(
+	git
+	dotbare
+	fzf 
+	fzf-tab
+	sudo
+)
+
+ENABLE_CORRECTION="true"
 
 export FZF_BASE="/usr/bin/fzf"
 export FZF_DEFAULT_COMMAND='ag -g "" --hidden'
