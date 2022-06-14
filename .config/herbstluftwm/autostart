@@ -12,30 +12,35 @@ xsetroot -solid '#222222'
 #feh --bg-tile /path/to/image.jpg
 hc set frame_border_active_color '#222222'
 hc set frame_border_normal_color '#101010'
-hc set frame_bg_normal_color 'transparent'
-hc set frame_bg_active_color 'transparent'
-hc set frame_border_width 1
+hc set frame_bg_normal_color '#003311'
+hc set frame_bg_active_color '#00802B'
 hc set always_show_frame 1
-hc set frame_bg_transparent 1
-hc set frame_transparent_width 2
-hc set frame_gap 4
+hc set frame_bg_transparent 0
+hc set frame_transparent_width 9
 
-hc attr theme.active.color '#9fbc00'
-hc attr theme.normal.color '#454545'
+hc attr theme.active.color '#00802B'
+hc attr theme.normal.color '#003311'
 hc attr theme.urgent.color '#ffa500'
-hc attr theme.inner_width 1
-hc attr theme.inner_color '#000000'
-hc attr theme.border_width 2
-hc attr theme.floating.border_width 4
-hc attr theme.floating.outer_width 1
-hc attr theme.floating.outer_color '#000000'
-hc attr theme.active.inner_color '#3e4a00'
-hc attr theme.active.outer_color '#9fbc00'
+hc attr theme.inner_color '#FF00FF'
+hc attr theme.floating.border_width 0
+hc attr theme.floating.outer_width 0
+hc attr theme.floating.outer_color '#FF0000'
+hc attr theme.active.inner_color '#00FF00'
+hc attr theme.active.outer_color '#0000FF'
 hc attr theme.background_color '#121212'
+hc attr theme.tiling.outer_width 0
+hc attr theme.background_color '#141414'
 
-hc set window_gap 8
+hc set frame_border_width 0
+hc attr theme.border_width 6
+hc attr theme.inner_width 0
+hc set frame_gap 32
+hc set window_gap 0
 hc set frame_padding 0
-hc pad :0 24 8 8 8
+
+hc set smart_window_surroundings off
+hc set smart_frame_surroundings off
+hc set mouse_recenter_gap 0
 
 # remove all existing keybindings
 hc keyunbind --all
@@ -140,13 +145,6 @@ for state in active urgent normal ; do
     hc substitute C theme.${state}.inner_color \
         attr theme.${state}.outer_color C
 done
-hc attr theme.tiling.outer_width 1
-hc attr theme.background_color '#141414'
-
-hc set frame_padding 0
-hc set smart_window_surroundings off
-hc set smart_frame_surroundings on
-hc set mouse_recenter_gap 0
 
 # rules
 hc unrule -F
@@ -177,4 +175,6 @@ panel=~/.config/herbstluftwm/panel.sh
 for monitor in $(hc list_monitors | cut -d: -f1) ; do
     # start it on each monitor
     "$panel" "$monitor" &
+    hc pad $monitor 24 0 0 0  
 done
+
